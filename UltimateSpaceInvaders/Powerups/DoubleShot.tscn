@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://csqqabgyshi0d"]
+
+[ext_resource type="Script" path="res://Powerups/DoubleShot.gd" id="1_vp3v2"]
+[ext_resource type="Texture2D" uid="uid://cva1ldeutl3jo" path="res://Assets/Textures/DoubleShot.png" id="2_tf77e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6e7h"]
+size = Vector2(38, 38)
+
+[node name="DoubleShot" type="Node2D"]
+script = ExtResource("1_vp3v2")
+
+[node name="Sprite2d" type="Sprite2D" parent="."]
+position = Vector2(1.43051e-06, -0.499999)
+scale = Vector2(0.164062, 0.152344)
+texture = ExtResource("2_tf77e")
+
+[node name="Area2d" type="Area2D" parent="." groups=["Powerup"]]
+collision_layer = 16
+monitoring = false
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="Area2d"]
+shape = SubResource("RectangleShape2D_l6e7h")

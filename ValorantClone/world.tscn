@@ -1,0 +1,111 @@
+[gd_scene load_steps=10 format=3 uid="uid://ldq1aqpk37vb"]
+
+[ext_resource type="PackedScene" uid="uid://bh2pgi28wrmcv" path="res://Player.tscn" id="1_4v0qi"]
+[ext_resource type="PackedScene" uid="uid://cyufovvjg1lgc" path="res://Agents/AI/Bot.tscn" id="2_vct1l"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pok5r"]
+size = Vector3(32, 1, 32)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_okf8j"]
+size = Vector3(32, 1, 32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fyk2r"]
+size = Vector3(32, 1, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6xo0m"]
+size = Vector3(32, 1, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kgvh0"]
+size = Vector3(6, 1, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rrxfh"]
+size = Vector3(6, 1, 12)
+
+[sub_resource type="Environment" id="Environment_cj87p"]
+background_mode = 1
+background_color = Color(0.831373, 0.831373, 0.831373, 1)
+background_energy = 0.8
+tonemap_mode = 3
+ssao_intensity = 1.0
+ssao_detail = 0.0
+sdfgi_cascades = 1
+sdfgi_min_cell_size = 2.0
+sdfgi_cascade0_distance = 128.0
+sdfgi_max_distance = 256.0
+
+[node name="World" type="Node3D"]
+
+[node name="StaticBody3d" type="StaticBody3D" parent="." groups=["Environment", "Floor"]]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="StaticBody3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_pok5r")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="StaticBody3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_okf8j")
+
+[node name="StaticBody3d2" type="StaticBody3D" parent="." groups=["Environment"]]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 14, 16)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="StaticBody3d2"]
+transform = Transform3D(1, 0, 0, 0, 1, -7.10543e-15, 0, 7.10543e-15, 1, 0, -0.499998, 8)
+mesh = SubResource("BoxMesh_fyk2r")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="StaticBody3d2"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.19744e-14, 0, 3.19744e-14, 1, 0, -0.499992, 8)
+shape = SubResource("BoxShape3D_6xo0m")
+
+[node name="StaticBody3d4" type="StaticBody3D" parent="." groups=["Environment"]]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, 14, 5.17206)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="StaticBody3d4"]
+transform = Transform3D(1, 0, -4.23516e-22, 0, 1, -7.10543e-15, 0, 7.10543e-15, 1, 7, -0.499998, 8)
+mesh = SubResource("BoxMesh_kgvh0")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="StaticBody3d4"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.19744e-14, 0, 3.19744e-14, 1, 7, -0.499992, 8)
+shape = SubResource("BoxShape3D_rrxfh")
+
+[node name="StaticBody3d3" type="StaticBody3D" parent="." groups=["Environment"]]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 16, 14, -0.5)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="StaticBody3d3"]
+transform = Transform3D(1, 0, 0, 0, 1, -7.10543e-15, 0, 7.10543e-15, 1, 0, -0.499998, 8)
+mesh = SubResource("BoxMesh_fyk2r")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="StaticBody3d3"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.19744e-14, 0, 3.19744e-14, 1, 0, -0.499992, 8)
+shape = SubResource("BoxShape3D_6xo0m")
+
+[node name="Player" parent="." instance=ExtResource("1_4v0qi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="DirectionalLight3d" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.25, -0.433013, 0, 0.866025, 0.5, 0.5, -0.433013, 0.75, 0, 2, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cj87p")
+
+[node name="OmniLight3d" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9169, 2.179, 14.0922)
+
+[node name="OmniLight3d2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.11503, 2.179, 14.0922)
+
+[node name="OmniLight3d3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03027, 2.179, 14.0922)
+
+[node name="OmniLight3d4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83307, 2.179, 14.0922)
+
+[node name="Bot" parent="." instance=ExtResource("2_vct1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -9)
+
+[node name="Bot2" parent="." instance=ExtResource("2_vct1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -9)
+team = 1
+
+[node name="Camera3d" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 2, -1)

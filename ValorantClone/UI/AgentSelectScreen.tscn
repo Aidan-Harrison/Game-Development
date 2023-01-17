@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd1nr3j5hifuu"]
+
+[ext_resource type="PackedScene" uid="uid://bdphbwt1okcjw" path="res://UI/AgentSelect.tscn" id="1_m7m3q"]
+[ext_resource type="PackedScene" uid="uid://cyufovvjg1lgc" path="res://Agents/AI/Bot.tscn" id="2_a24l5"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_n2esu"]
+size = Vector2(12, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hmpha"]
+size = Vector3(12, 0.1, 12)
+
+[node name="AgentSelectScreen" type="Node3D"]
+
+[node name="AgentSelect" parent="." instance=ExtResource("1_m7m3q")]
+
+[node name="DirectionalLight3d" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.224144, 0.678603, 0.699469, 0.12941, -0.69065, 0.711516, 0.965926, 0.25, 0.0669873, 0, 1, 0)
+
+[node name="Camera3d" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+
+[node name="Bot" parent="." instance=ExtResource("2_a24l5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2)
+
+[node name="StaticBody3d" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="StaticBody3d"]
+mesh = SubResource("PlaneMesh_n2esu")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="StaticBody3d"]
+shape = SubResource("BoxShape3D_hmpha")

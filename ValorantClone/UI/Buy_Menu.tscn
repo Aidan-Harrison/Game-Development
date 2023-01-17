@@ -1,0 +1,569 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqwtijaej0fub"]
+
+[ext_resource type="Theme" uid="uid://dns52o4wxf6ig" path="res://UI/Themes/BuyMenu.tres" id="1_5q7o0"]
+[ext_resource type="Script" path="res://UI/Buy_Menu.gd" id="1_b5n5n"]
+[ext_resource type="Texture2D" uid="uid://ce0r6e5poq7mr" path="res://icon.svg" id="2_hw40m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_25j6b"]
+font_size = 32
+
+[node name="Buy_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5q7o0")
+script = ExtResource("1_b5n5n")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 151.0
+offset_top = 74.0
+offset_right = -140.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.25098)
+
+[node name="Sidearms" type="VBoxContainer" parent="ColorRect"]
+anchors_preset = -1
+anchor_right = 0.181
+anchor_bottom = 0.999
+offset_right = 0.15097
+offset_bottom = -0.0710449
+
+[node name="Classic" type="Button" parent="ColorRect/Sidearms"]
+offset_right = 294.0
+offset_bottom = 182.0
+size_flags_vertical = 3
+icon = ExtResource("2_hw40m")
+icon_alignment = 1
+
+[node name="Classic_Name" type="Label" parent="ColorRect/Sidearms/Classic"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.779
+anchor_right = 0.224
+anchor_bottom = 0.807
+offset_left = 0.134999
+offset_top = 0.0879517
+offset_right = -0.0800018
+offset_bottom = 0.103943
+grow_vertical = 0
+text = "Classic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OWNED" type="Label" parent="ColorRect/Sidearms/Classic"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.823
+anchor_right = 0.224
+anchor_bottom = 0.851
+offset_left = 0.134999
+offset_top = 0.255981
+offset_right = -0.0800018
+offset_bottom = 0.271973
+grow_vertical = 0
+text = "FALSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Classic2" type="Button" parent="ColorRect/Sidearms"]
+offset_top = 186.0
+offset_right = 294.0
+offset_bottom = 368.0
+size_flags_vertical = 3
+icon = ExtResource("2_hw40m")
+icon_alignment = 1
+
+[node name="Classic_Name" type="Label" parent="ColorRect/Sidearms/Classic2"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.779
+anchor_right = 0.224
+anchor_bottom = 0.807
+offset_left = 0.134999
+offset_top = 0.0879517
+offset_right = -0.0800018
+offset_bottom = 0.103943
+grow_vertical = 0
+text = "Classic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OWNED" type="Label" parent="ColorRect/Sidearms/Classic2"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.823
+anchor_right = 0.224
+anchor_bottom = 0.851
+offset_left = 0.134999
+offset_top = 0.255981
+offset_right = -0.0800018
+offset_bottom = 0.271973
+grow_vertical = 0
+text = "FALSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Classic3" type="Button" parent="ColorRect/Sidearms"]
+offset_top = 372.0
+offset_right = 294.0
+offset_bottom = 554.0
+size_flags_vertical = 3
+icon = ExtResource("2_hw40m")
+icon_alignment = 1
+
+[node name="Classic_Name" type="Label" parent="ColorRect/Sidearms/Classic3"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.779
+anchor_right = 0.224
+anchor_bottom = 0.807
+offset_left = 0.134999
+offset_top = 0.0879517
+offset_right = -0.0800018
+offset_bottom = 0.103943
+grow_vertical = 0
+text = "Classic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OWNED" type="Label" parent="ColorRect/Sidearms/Classic3"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.823
+anchor_right = 0.224
+anchor_bottom = 0.851
+offset_left = 0.134999
+offset_top = 0.255981
+offset_right = -0.0800018
+offset_bottom = 0.271973
+grow_vertical = 0
+text = "FALSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Classic4" type="Button" parent="ColorRect/Sidearms"]
+offset_top = 558.0
+offset_right = 294.0
+offset_bottom = 740.0
+size_flags_vertical = 3
+icon = ExtResource("2_hw40m")
+icon_alignment = 1
+
+[node name="Classic_Name" type="Label" parent="ColorRect/Sidearms/Classic4"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.779
+anchor_right = 0.224
+anchor_bottom = 0.807
+offset_left = 0.134999
+offset_top = 0.0879517
+offset_right = -0.0800018
+offset_bottom = 0.103943
+grow_vertical = 0
+text = "Classic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OWNED" type="Label" parent="ColorRect/Sidearms/Classic4"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.823
+anchor_right = 0.224
+anchor_bottom = 0.851
+offset_left = 0.134999
+offset_top = 0.255981
+offset_right = -0.0800018
+offset_bottom = 0.271973
+grow_vertical = 0
+text = "FALSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Classic5" type="Button" parent="ColorRect/Sidearms"]
+offset_top = 744.0
+offset_right = 294.0
+offset_bottom = 927.0
+size_flags_vertical = 3
+icon = ExtResource("2_hw40m")
+icon_alignment = 1
+
+[node name="Classic_Name" type="Label" parent="ColorRect/Sidearms/Classic5"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.779
+anchor_right = 0.224
+anchor_bottom = 0.807
+offset_left = 0.134999
+offset_top = 0.0879517
+offset_right = -0.0800018
+offset_bottom = 0.103943
+grow_vertical = 0
+text = "Classic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OWNED" type="Label" parent="ColorRect/Sidearms/Classic5"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.823
+anchor_right = 0.224
+anchor_bottom = 0.851
+offset_left = 0.134999
+offset_top = 0.255981
+offset_right = -0.0800018
+offset_bottom = 0.271973
+grow_vertical = 0
+text = "FALSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sidearms2" type="VBoxContainer" parent="ColorRect"]
+anchors_preset = -1
+anchor_right = 0.181
+anchor_bottom = 0.999
+offset_left = 296.0
+offset_right = 296.151
+offset_bottom = -459.071
+metadata/_edit_group_ = true
+
+[node name="Classic" type="Button" parent="ColorRect/Sidearms2"]
+offset_right = 295.0
+offset_bottom = 232.0
+size_flags_vertical = 3
+icon = ExtResource("2_hw40m")
+icon_alignment = 1
+
+[node name="Classic_Name" type="Label" parent="ColorRect/Sidearms2/Classic"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.779
+anchor_right = 0.224
+anchor_bottom = 0.807
+offset_left = 0.134999
+offset_top = 0.0879517
+offset_right = -0.0800018
+offset_bottom = 0.103943
+grow_vertical = 0
+text = "Classic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OWNED" type="Label" parent="ColorRect/Sidearms2/Classic"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.823
+anchor_right = 0.224
+anchor_bottom = 0.851
+offset_left = 0.134999
+offset_top = 0.255981
+offset_right = -0.0800018
+offset_bottom = 0.271973
+grow_vertical = 0
+text = "FALSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Classic2" type="Button" parent="ColorRect/Sidearms2"]
+offset_top = 236.0
+offset_right = 295.0
+offset_bottom = 468.0
+size_flags_vertical = 3
+icon = ExtResource("2_hw40m")
+icon_alignment = 1
+
+[node name="Classic_Name" type="Label" parent="ColorRect/Sidearms2/Classic2"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.779
+anchor_right = 0.224
+anchor_bottom = 0.807
+offset_left = 0.134999
+offset_top = 0.0879517
+offset_right = -0.0800018
+offset_bottom = 0.103943
+grow_vertical = 0
+text = "Classic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OWNED" type="Label" parent="ColorRect/Sidearms2/Classic2"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.823
+anchor_right = 0.224
+anchor_bottom = 0.851
+offset_left = 0.134999
+offset_top = 0.255981
+offset_right = -0.0800018
+offset_bottom = 0.271973
+grow_vertical = 0
+text = "FALSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shotguns" type="VBoxContainer" parent="ColorRect"]
+anchors_preset = -1
+anchor_right = 0.181
+anchor_bottom = 0.999
+offset_left = 297.0
+offset_top = 512.0
+offset_right = 297.151
+offset_bottom = -2.07098
+metadata/_edit_group_ = true
+
+[node name="Bucky" type="Button" parent="ColorRect/Shotguns"]
+offset_right = 295.0
+offset_bottom = 205.0
+size_flags_vertical = 3
+icon = ExtResource("2_hw40m")
+icon_alignment = 1
+
+[node name="Classic_Name" type="Label" parent="ColorRect/Shotguns/Bucky"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.779
+anchor_right = 0.224
+anchor_bottom = 0.807
+offset_left = 0.134999
+offset_top = 0.0879517
+offset_right = -0.0800018
+offset_bottom = 0.103943
+grow_vertical = 0
+text = "Bucky"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OWNED" type="Label" parent="ColorRect/Shotguns/Bucky"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.823
+anchor_right = 0.224
+anchor_bottom = 0.851
+offset_left = 0.134999
+offset_top = 0.255981
+offset_right = -0.0800018
+offset_bottom = 0.271973
+grow_vertical = 0
+text = "FALSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Judge" type="Button" parent="ColorRect/Shotguns"]
+offset_top = 209.0
+offset_right = 295.0
+offset_bottom = 414.0
+size_flags_vertical = 3
+icon = ExtResource("2_hw40m")
+icon_alignment = 1
+
+[node name="Classic_Name" type="Label" parent="ColorRect/Shotguns/Judge"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.779
+anchor_right = 0.224
+anchor_bottom = 0.807
+offset_left = 0.134999
+offset_top = 0.0879517
+offset_right = -0.0800018
+offset_bottom = 0.103943
+grow_vertical = 0
+text = "Classic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OWNED" type="Label" parent="ColorRect/Shotguns/Judge"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.823
+anchor_right = 0.224
+anchor_bottom = 0.851
+offset_left = 0.134999
+offset_top = 0.255981
+offset_right = -0.0800018
+offset_bottom = 0.271973
+grow_vertical = 0
+text = "FALSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sidearms4" type="VBoxContainer" parent="ColorRect"]
+anchors_preset = -1
+anchor_right = 0.181
+anchor_bottom = 0.999
+offset_left = 597.0
+offset_top = 511.0
+offset_right = 597.151
+offset_bottom = -3.07098
+metadata/_edit_group_ = true
+
+[node name="Vandal" type="Button" parent="ColorRect/Sidearms4"]
+offset_right = 295.0
+offset_bottom = 205.0
+size_flags_vertical = 3
+text = "VANDAL"
+icon = ExtResource("2_hw40m")
+icon_alignment = 1
+
+[node name="Classic_Name" type="Label" parent="ColorRect/Sidearms4/Vandal"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.779
+anchor_right = 0.224
+anchor_bottom = 0.807
+offset_left = 0.134999
+offset_top = 0.0879517
+offset_right = -0.0800018
+offset_bottom = 0.103943
+grow_vertical = 0
+text = "VANDAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OWNED" type="Label" parent="ColorRect/Sidearms4/Vandal"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.823
+anchor_right = 0.224
+anchor_bottom = 0.851
+offset_left = 0.134999
+offset_top = 0.255981
+offset_right = -0.0800018
+offset_bottom = 0.271973
+grow_vertical = 0
+text = "FALSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Classic2" type="Button" parent="ColorRect/Sidearms4"]
+offset_top = 209.0
+offset_right = 295.0
+offset_bottom = 414.0
+size_flags_vertical = 3
+icon = ExtResource("2_hw40m")
+icon_alignment = 1
+
+[node name="Classic_Name" type="Label" parent="ColorRect/Sidearms4/Classic2"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.779
+anchor_right = 0.224
+anchor_bottom = 0.807
+offset_left = 0.134999
+offset_top = 0.0879517
+offset_right = -0.0800018
+offset_bottom = 0.103943
+grow_vertical = 0
+text = "Classic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OWNED" type="Label" parent="ColorRect/Sidearms4/Classic2"]
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.823
+anchor_right = 0.224
+anchor_bottom = 0.851
+offset_left = 0.134999
+offset_top = 0.255981
+offset_right = -0.0800018
+offset_bottom = 0.271973
+grow_vertical = 0
+text = "FALSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+anchors_preset = -1
+anchor_top = -0.043
+anchor_right = 0.18
+offset_top = -0.0529976
+offset_right = 0.779999
+grow_horizontal = 2
+color = Color(0.203922, 0.537255, 0.458824, 1)
+
+[node name="Label" type="Label" parent="ColorRect/ColorRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "SIDEARMS"
+label_settings = SubResource("LabelSettings_25j6b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+anchors_preset = -1
+anchor_left = 0.182
+anchor_top = -0.043
+anchor_right = 0.363
+offset_left = 0.521973
+offset_top = -0.0529976
+offset_right = -0.327026
+grow_horizontal = 2
+color = Color(0.203922, 0.537255, 0.458824, 1)
+
+[node name="Label" type="Label" parent="ColorRect/ColorRect2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "SMGS"
+label_settings = SubResource("LabelSettings_25j6b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRect"]
+anchors_preset = -1
+anchor_left = 0.182
+anchor_top = -0.043
+anchor_right = 0.363
+offset_left = -0.478027
+offset_top = 509.947
+offset_right = -1.32703
+offset_bottom = 510.0
+grow_horizontal = 2
+color = Color(0.203922, 0.537255, 0.458824, 1)
+
+[node name="Label" type="Label" parent="ColorRect/ColorRect3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "SHOTGUNS"
+label_settings = SubResource("LabelSettings_25j6b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ColorRect/Sidearms/Classic" to="." method="_on_classic_pressed"]
+[connection signal="pressed" from="ColorRect/Sidearms2/Classic" to="." method="_on_classic_pressed"]
+[connection signal="pressed" from="ColorRect/Shotguns/Bucky" to="." method="_on_bucky_pressed"]
+[connection signal="pressed" from="ColorRect/Sidearms4/Vandal" to="." method="_on_vandal_pressed"]

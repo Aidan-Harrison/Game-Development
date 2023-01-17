@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgaj1cpme27oo"]
+
+[ext_resource type="Texture2D" uid="uid://ds4fob85uvsk4" path="res://icon.svg" id="1_7htlo"]
+[ext_resource type="Script" path="res://Gameplay/Boss.gd" id="1_e7eid"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcqmt"]
+size = Vector2(129, 128)
+
+[node name="Boss" type="CharacterBody2D"]
+script = ExtResource("1_e7eid")
+
+[node name="Sprite2d" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0.0745098, 1)
+texture = ExtResource("1_7htlo")
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_kcqmt")
+
+[node name="AttackTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Camera2d" type="Camera2D" parent="."]
+current = true
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

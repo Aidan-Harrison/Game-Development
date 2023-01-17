@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://buif8o5yo8s0q"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_qj68y"]
+[ext_resource type="Texture2D" uid="uid://de0gkyqt5j548" path="res://Assets/Textures/SpaceInvader.png" id="2_cnhhx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ympla"]
+size = Vector2(61, 44)
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
+motion_mode = 1
+slide_on_ceiling = false
+script = ExtResource("1_qj68y")
+
+[node name="Sprite2d" type="Sprite2D" parent="."]
+modulate = Color(0.976471, 1, 0.980392, 1)
+position = Vector2(-1.90735e-06, 0)
+scale = Vector2(0.113917, 0.0930131)
+skew = 0.261799
+texture = ExtResource("2_cnhhx")
+region_rect = Rect2(500, 0, 0, 0)
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_ympla")

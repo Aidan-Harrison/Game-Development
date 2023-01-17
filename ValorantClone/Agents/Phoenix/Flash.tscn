@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfqgq81v45wj4"]
+
+[ext_resource type="Script" path="res://Agents/Phoenix/Flash.gd" id="1_dhict"]
+[ext_resource type="PackedScene" uid="uid://d12r7i5ra4gsj" path="res://Agents/Universal/FlashEntity.tscn" id="2_4xmvr"]
+[ext_resource type="Material" uid="uid://imr0aqnqx53q" path="res://Materials/VISUAL.tres" id="3_pqas0"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_yg2so"]
+radius = 0.1
+height = 0.2
+radial_segments = 10
+rings = 10
+
+[sub_resource type="BoxMesh" id="BoxMesh_nxpwn"]
+size = Vector3(0.1, 0.1, 0.5)
+
+[node name="Phoenix_Flash" type="Node3D"]
+script = ExtResource("1_dhict")
+
+[node name="RigidBody3d" type="RigidBody3D" parent="."]
+gravity_scale = 0.0
+
+[node name="FlashEntity" parent="RigidBody3d" instance=ExtResource("2_4xmvr")]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="RigidBody3d"]
+material_override = ExtResource("3_pqas0")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_yg2so")
+
+[node name="DirVector" type="Node3D" parent="RigidBody3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Camera3d" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, 0)
+visible = false
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
+mesh = SubResource("BoxMesh_nxpwn")
+
+[node name="FlashTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="FlashEntity" parent="." instance=ExtResource("2_4xmvr")]
+
+[connection signal="timeout" from="FlashTimer" to="." method="_on_flash_timer_timeout"]

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://llxew2w8eohy"]
+
+[ext_resource type="Texture2D" uid="uid://bo68haojp16il" path="res://Textures/Agents/Sage/SageWallTexture.png" id="1_e3gvr"]
+
+[resource]
+albedo_texture = ExtResource("1_e3gvr")
+emission = Color(0.741176, 1, 0.717647, 1)
+emission_energy = 0.1
+subsurf_scatter_strength = 1.0

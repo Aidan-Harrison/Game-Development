@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b57b8jleqg5br"]
+
+[ext_resource type="Script" path="res://Powerups/Shield.gd" id="1_7gpry"]
+[ext_resource type="Texture2D" uid="uid://dhp1hwmyyugas" path="res://Assets/Textures/ShieldPickup.png" id="2_7ekks"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5tx8"]
+size = Vector2(50, 48)
+
+[node name="Shield" type="Node2D"]
+script = ExtResource("1_7gpry")
+
+[node name="Sprite2d" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 1)
+scale = Vector2(0.195312, 0.1875)
+texture = ExtResource("2_7ekks")
+
+[node name="Area2d" type="Area2D" parent="." groups=["Powerup"]]
+collision_layer = 16
+monitoring = false
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="Area2d"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_h5tx8")

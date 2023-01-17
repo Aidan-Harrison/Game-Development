@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqto5361aio2k"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_cih3a"]
+[ext_resource type="PackedScene" uid="uid://d15kradcoo18b" path="res://Player.tscn" id="1_u6eff"]
+[ext_resource type="Texture2D" uid="uid://cxslhhelk4s30" path="res://Assets/Textures/Nebula.jpeg" id="2_5mmoi"]
+[ext_resource type="PackedScene" uid="uid://b0e0im4o7njic" path="res://UI/HUD.tscn" id="5_0wr8l"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_cih3a")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+modulate = Color(0.172549, 0.172549, 0.172549, 1)
+offset_left = -600.0
+offset_top = -342.0
+offset_right = 599.0
+offset_bottom = 354.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5mmoi")
+
+[node name="Camera2d" type="Camera2D" parent="."]
+current = true
+
+[node name="Player" parent="." instance=ExtResource("1_u6eff")]
+position = Vector2(0, 250)
+
+[node name="TickRate" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="AttackRate" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -576.0
+offset_top = -325.0
+offset_right = 577.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HUD" parent="UI" instance=ExtResource("5_0wr8l")]
+
+[node name="Counter" type="Timer" parent="."]
+autostart = true
+
+[node name="ScoreTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="TickRate" to="." method="_on_tick_rate_timeout"]
+[connection signal="timeout" from="AttackRate" to="." method="_on_attack_rate_timeout"]
+[connection signal="timeout" from="Counter" to="." method="_on_counter_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

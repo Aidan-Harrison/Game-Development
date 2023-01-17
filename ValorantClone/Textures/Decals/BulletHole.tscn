@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://beoxgrnrm2uer"]
+
+[ext_resource type="Texture2D" uid="uid://ce0r6e5poq7mr" path="res://icon.svg" id="1_tbamk"]
+[ext_resource type="Script" path="res://Textures/Decals/BulletHole.gd" id="2_qgwkh"]
+
+[node name="BulletHole" type="Decal"]
+extents = Vector3(0.1, 0.1, 0.1)
+texture_albedo = ExtResource("1_tbamk")
+script = ExtResource("2_qgwkh")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

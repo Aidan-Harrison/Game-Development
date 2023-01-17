@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://rxj6rm2m7uws"]
+
+[ext_resource type="Texture2D" uid="uid://bo68haojp16il" path="res://Textures/Agents/Sage/SageWallTexture.png" id="1_5d7ln"]
+
+[resource]
+cull_mode = 2
+emission_enabled = true
+emission = Color(1, 0.462745, 0, 1)
+emission_texture = ExtResource("1_5d7ln")

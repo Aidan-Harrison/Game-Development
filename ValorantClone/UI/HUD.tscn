@@ -1,0 +1,362 @@
+[gd_scene load_steps=12 format=3 uid="uid://u1h3wojwxbf7"]
+
+[ext_resource type="Texture2D" uid="uid://ce0r6e5poq7mr" path="res://icon.svg" id="1_1n2qn"]
+[ext_resource type="Script" path="res://UI/HUD.gd" id="1_g1bln"]
+[ext_resource type="Texture2D" uid="uid://bir3wxnypojh8" path="res://UI/ValorantCursor.png" id="2_2sm15"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ee7kx"]
+font_size = 86
+
+[sub_resource type="LabelSettings" id="LabelSettings_hct7y"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_etjoe"]
+font_size = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ahfv"]
+bg_color = Color(0, 0, 0, 0.556863)
+skew = Vector2(1, 0)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t21fn"]
+bg_color = Color(0, 1, 0.772549, 1)
+skew = Vector2(1, 0)
+corner_detail = 1
+
+[sub_resource type="Animation" id="Animation_joobe"]
+resource_name = "Flash"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flash:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flash:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_sl65i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flash:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flash:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ngrt"]
+_data = {
+"Flash": SubResource("Animation_joobe"),
+"RESET": SubResource("Animation_sl65i")
+}
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g1bln")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2sm15")
+ignore_texture_size = true
+
+[node name="Health" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.267
+anchor_top = 0.918
+anchor_right = 0.267
+anchor_bottom = 0.918
+offset_left = -90.64
+offset_top = -60.4401
+offset_right = 92.36
+offset_bottom = 60.5599
+text = "100"
+label_settings = SubResource("LabelSettings_ee7kx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurAmmo" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.696
+anchor_top = 0.915
+anchor_right = 0.696
+anchor_bottom = 0.915
+offset_left = -92.3201
+offset_top = -60.2
+offset_right = 90.6799
+offset_bottom = 60.8
+text = "100"
+label_settings = SubResource("LabelSettings_ee7kx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TotalAmmo" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.778
+anchor_top = 0.915
+anchor_right = 0.778
+anchor_bottom = 0.915
+offset_left = -91.7601
+offset_top = -60.2
+offset_right = 91.2399
+offset_bottom = 60.8
+text = "100"
+label_settings = SubResource("LabelSettings_hct7y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Armor" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.198
+anchor_top = 0.935
+anchor_right = 0.198
+anchor_bottom = 0.935
+offset_left = -92.16
+offset_top = -60.8
+offset_right = 90.84
+offset_bottom = 60.2
+text = "50"
+label_settings = SubResource("LabelSettings_etjoe")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+visible = false
+offset_right = 510.0
+offset_bottom = 512.0
+metadata/_edit_lock_ = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+render_target_update_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.878
+anchor_right = 0.5
+anchor_bottom = 0.878
+offset_left = -345.0
+offset_top = -73.2401
+offset_right = 345.0
+offset_bottom = 73.7599
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Ability1Icon" type="TextureRect" parent="HBoxContainer"]
+offset_left = 83.0
+offset_right = 211.0
+offset_bottom = 147.0
+texture = ExtResource("1_1n2qn")
+
+[node name="Abilty1Count" type="ProgressBar" parent="HBoxContainer/Ability1Icon"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/bg = SubResource("StyleBoxFlat_4ahfv")
+theme_override_styles/fg = SubResource("StyleBoxFlat_t21fn")
+max_value = 2.0
+value = 2.0
+percent_visible = false
+
+[node name="Key" type="Label" parent="HBoxContainer/Ability1Icon"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.184
+anchor_right = 0.5
+anchor_bottom = 1.184
+offset_left = -20.0
+offset_top = -0.0480042
+offset_right = 20.0
+offset_bottom = 25.952
+grow_horizontal = 2
+grow_vertical = 0
+text = "C"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ability1Icon2" type="TextureRect" parent="HBoxContainer"]
+offset_left = 215.0
+offset_right = 343.0
+offset_bottom = 147.0
+texture = ExtResource("1_1n2qn")
+
+[node name="Abilty1Count" type="ProgressBar" parent="HBoxContainer/Ability1Icon2"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/bg = SubResource("StyleBoxFlat_4ahfv")
+theme_override_styles/fg = SubResource("StyleBoxFlat_t21fn")
+max_value = 2.0
+value = 2.0
+percent_visible = false
+
+[node name="Key" type="Label" parent="HBoxContainer/Ability1Icon2"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.184
+anchor_right = 0.5
+anchor_bottom = 1.184
+offset_left = -20.0
+offset_top = -0.0480042
+offset_right = 20.0
+offset_bottom = 25.952
+grow_horizontal = 2
+grow_vertical = 0
+text = "Q"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ability1Icon3" type="TextureRect" parent="HBoxContainer"]
+offset_left = 347.0
+offset_right = 475.0
+offset_bottom = 147.0
+texture = ExtResource("1_1n2qn")
+
+[node name="Abilty1Count" type="ProgressBar" parent="HBoxContainer/Ability1Icon3"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/bg = SubResource("StyleBoxFlat_4ahfv")
+theme_override_styles/fg = SubResource("StyleBoxFlat_t21fn")
+max_value = 2.0
+value = 2.0
+percent_visible = false
+
+[node name="Key" type="Label" parent="HBoxContainer/Ability1Icon3"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.184
+anchor_right = 0.5
+anchor_bottom = 1.184
+offset_left = -20.0
+offset_top = -0.0480042
+offset_right = 20.0
+offset_bottom = 25.952
+grow_horizontal = 2
+grow_vertical = 0
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ability1Icon4" type="TextureRect" parent="HBoxContainer"]
+offset_left = 479.0
+offset_right = 607.0
+offset_bottom = 147.0
+texture = ExtResource("1_1n2qn")
+
+[node name="Abilty1Count" type="ProgressBar" parent="HBoxContainer/Ability1Icon4"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/bg = SubResource("StyleBoxFlat_4ahfv")
+theme_override_styles/fg = SubResource("StyleBoxFlat_t21fn")
+max_value = 2.0
+value = 2.0
+percent_visible = false
+
+[node name="Key" type="Label" parent="HBoxContainer/Ability1Icon4"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.184
+anchor_right = 0.5
+anchor_bottom = 1.184
+offset_left = -20.0
+offset_top = -0.0480042
+offset_right = 20.0
+offset_bottom = 25.952
+grow_horizontal = 2
+grow_vertical = 0
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Flash" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6ngrt")
+}

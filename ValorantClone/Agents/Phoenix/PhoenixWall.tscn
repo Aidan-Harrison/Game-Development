@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://djyf7ohr4k27b"]
+
+[ext_resource type="Script" path="res://Agents/Phoenix/PhoenixWall.gd" id="1_3fvgi"]
+[ext_resource type="Material" uid="uid://cydqpubljwg0t" path="res://Materials/BaseWeapon.tres" id="2_ubl0e"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g6hf8"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6ha1w"]
+material = ExtResource("2_ubl0e")
+size = Vector2(24, 24)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m2jn0"]
+size = Vector3(24, 0.1, 24)
+
+[node name="Phoenix_Wall" type="Node3D"]
+script = ExtResource("1_3fvgi")
+
+[node name="RayCast3d" type="RayCast3D" parent="."]
+target_position = Vector3(0, -100, 0)
+
+[node name="Cursor" type="Node3D" parent="."]
+
+[node name="WallGap" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="TotalTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("PlaneMesh_g6hf8")
+
+[node name="StaticBody3d" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.65405, 0)
+visible = false
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="StaticBody3d"]
+mesh = SubResource("PlaneMesh_6ha1w")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="StaticBody3d"]
+shape = SubResource("BoxShape3D_m2jn0")
+
+[node name="Node3d" type="Node3D" parent="."]
+visible = false
+
+[node name="Camera3d" type="Camera3D" parent="Node3d"]
+transform = Transform3D(0.36986, 0, -0.929087, 0, 1, 0, 0.929087, 0, 0.36986, -8.08513, 0, 7.19115)
+
+[node name="DirectionalLight3d" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.951675, 0.307108, 9.15252e-09, -0.229989, 0.712696, 0.662699, 0.20352, -0.630674, 0.748886, 0, 0, 0)
+visible = false
+
+[connection signal="timeout" from="WallGap" to="." method="_on_wall_gap_timeout"]
+[connection signal="timeout" from="TotalTimer" to="." method="_on_total_timer_timeout"]

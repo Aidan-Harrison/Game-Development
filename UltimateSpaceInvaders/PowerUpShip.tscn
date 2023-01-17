@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://fsxsdagwurtl"]
+
+[ext_resource type="Script" path="res://PowerUpShip.gd" id="1_gndet"]
+[ext_resource type="Texture2D" uid="uid://ds4fob85uvsk4" path="res://icon.svg" id="1_h3cqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pww1t"]
+size = Vector2(128, 128)
+
+[node name="PowerUpShip" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 4
+script = ExtResource("1_gndet")
+
+[node name="Sprite2d" type="Sprite2D" parent="."]
+texture = ExtResource("1_h3cqy")
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pww1t")
