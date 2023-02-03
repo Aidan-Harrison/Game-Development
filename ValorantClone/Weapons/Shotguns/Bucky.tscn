@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Weapons/Shotguns/Bucky.gd" id="1_c0dty"]
 [ext_resource type="Material" uid="uid://cydqpubljwg0t" path="res://Materials/BaseWeapon.tres" id="2_hv730"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_1wamq"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_s6g5o"]
 material = ExtResource("2_hv730")
 top_radius = 0.1
 bottom_radius = 0.1
@@ -11,12 +11,12 @@ height = 1.0
 radial_segments = 16
 rings = 1
 
-[sub_resource type="Animation" id="Animation_w21lp"]
+[sub_resource type="Animation" id="Animation_aagyg"]
 resource_name = "Fire"
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_w2f84"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i4acv"]
 _data = {
-"Fire": SubResource("Animation_w21lp")
+"Fire": SubResource("Animation_aagyg")
 }
 
 [node name="Bucky" type="Node3D"]
@@ -24,7 +24,7 @@ script = ExtResource("1_c0dty")
 
 [node name="MeshInstance3d" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("CylinderMesh_1wamq")
+mesh = SubResource("CylinderMesh_s6g5o")
 
 [node name="FireRate" type="Timer" parent="."]
 one_shot = true
@@ -34,7 +34,7 @@ target_position = Vector3(0, 0, -100)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_w2f84")
+"": SubResource("AnimationLibrary_i4acv")
 }
 
 [connection signal="timeout" from="FireRate" to="." method="_on_fire_rate_timeout"]

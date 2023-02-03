@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://Projectile.gd" id="1_4a4tk"]
 [ext_resource type="Texture2D" uid="uid://ds4fob85uvsk4" path="res://icon.svg" id="1_ylxhm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cl0u"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jlsn"]
 size = Vector2(26, 26)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hit5r"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxvc7"]
 size = Vector2(26, 26)
 
 [node name="Projectile" type="CharacterBody2D"]
@@ -20,7 +20,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_ylxhm")
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_0cl0u")
+shape = SubResource("RectangleShape2D_1jlsn")
 disabled = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -32,7 +32,7 @@ collision_layer = 4
 collision_mask = 99
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="Area2d"]
-shape = SubResource("RectangleShape2D_hit5r")
+shape = SubResource("RectangleShape2D_pxvc7")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2d" to="." method="_on_area_2d_body_entered"]

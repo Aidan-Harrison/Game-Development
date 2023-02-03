@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Cover.gd" id="1_ms1v7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uaaka"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ame7h"]
 
 [node name="Cover" type="Area2D"]
 collision_layer = 8
@@ -13,7 +13,7 @@ script = ExtResource("1_ms1v7")
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
 position = Vector2(30, 25)
 scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_uaaka")
+shape = SubResource("RectangleShape2D_ame7h")
 
 [connection signal="area_entered" from="." to="." method="_on_cover_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_cover_body_entered"]

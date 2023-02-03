@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c2msdx8chdrs3"]
+
+[ext_resource type="Shader" path="res://Shaders/Invader.gdshader" id="1_cycwt"]
+[ext_resource type="Texture2D" uid="uid://de0gkyqt5j548" path="res://Assets/Textures/SpaceInvader.png" id="2_6hhu7"]
+
+[resource]
+shader = ExtResource("1_cycwt")
+shader_parameter/tex = ExtResource("2_6hhu7")

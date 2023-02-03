@@ -2,23 +2,23 @@
 
 [ext_resource type="Material" uid="uid://llxew2w8eohy" path="res://Materials/AgentSpecific/Sage/SageWall.tres" id="1_tneeq"]
 
-[sub_resource type="Curve" id="Curve_t7ko7"]
+[sub_resource type="Curve" id="Curve_s766q"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.14, 0.225225), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_yo7fb"]
-curve = SubResource("Curve_t7ko7")
+[sub_resource type="CurveTexture" id="CurveTexture_wgtas"]
+curve = SubResource("Curve_s766q")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gg1lh"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_21ebw"]
 emission_shape = 3
 emission_box_extents = Vector3(1, 1, 1)
 direction = Vector3(0, 0, 0)
 spread = 180.0
 initial_velocity_min = 2.0
 initial_velocity_max = 5.0
-scale_curve = SubResource("CurveTexture_yo7fb")
+scale_curve = SubResource("CurveTexture_wgtas")
 
-[sub_resource type="BoxMesh" id="BoxMesh_fsvwa"]
+[sub_resource type="BoxMesh" id="BoxMesh_7spd5"]
 material = ExtResource("1_tneeq")
 
 [node name="WallShatter" type="GPUParticles3D"]
@@ -26,5 +26,5 @@ emitting = false
 amount = 128
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource("ParticleProcessMaterial_gg1lh")
-draw_pass_1 = SubResource("BoxMesh_fsvwa")
+process_material = SubResource("ParticleProcessMaterial_21ebw")
+draw_pass_1 = SubResource("BoxMesh_7spd5")

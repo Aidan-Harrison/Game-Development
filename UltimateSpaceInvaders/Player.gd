@@ -72,7 +72,7 @@ func _input(event) -> void:
 			heat = 0;
 			ui.heat.modulate = Color.WHITE;
 	if(Input.is_action_just_pressed("Interact") && canQuickExit):
-		get_tree().change_scene("res://UI/Menu/MainMenu.tscn");
+		get_tree().change_scene_to_file("res://UI/Menu/MainMenu.tscn");
 	
 	if(Input.is_action_just_pressed("Ability") && ability != null):
 		ability.Activate();

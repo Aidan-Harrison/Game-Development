@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://Agents/Phoenix/PhoenixWall.gd" id="1_3fvgi"]
 [ext_resource type="Material" uid="uid://cydqpubljwg0t" path="res://Materials/BaseWeapon.tres" id="2_ubl0e"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_g6hf8"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_j15bl"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_6ha1w"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_p8f3v"]
 material = ExtResource("2_ubl0e")
 size = Vector2(24, 24)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_m2jn0"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_pmvh3"]
 size = Vector3(24, 0.1, 24)
 
 [node name="Phoenix_Wall" type="Node3D"]
@@ -28,17 +28,17 @@ wait_time = 3.0
 
 [node name="MeshInstance3d" type="MeshInstance3D" parent="."]
 visible = false
-mesh = SubResource("PlaneMesh_g6hf8")
+mesh = SubResource("PlaneMesh_j15bl")
 
 [node name="StaticBody3d" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.65405, 0)
 visible = false
 
 [node name="MeshInstance3d" type="MeshInstance3D" parent="StaticBody3d"]
-mesh = SubResource("PlaneMesh_6ha1w")
+mesh = SubResource("PlaneMesh_p8f3v")
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="StaticBody3d"]
-shape = SubResource("BoxShape3D_m2jn0")
+shape = SubResource("BoxShape3D_pmvh3")
 
 [node name="Node3d" type="Node3D" parent="."]
 visible = false

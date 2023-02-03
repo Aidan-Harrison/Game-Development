@@ -43,6 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HUD" parent="UI" instance=ExtResource("5_0wr8l")]
+layout_mode = 1
 
 [node name="Counter" type="Timer" parent="."]
 autostart = true

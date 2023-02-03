@@ -24,7 +24,6 @@ size = Vector3(6, 1, 12)
 [sub_resource type="Environment" id="Environment_cj87p"]
 background_mode = 1
 background_color = Color(0.831373, 0.831373, 0.831373, 1)
-background_energy = 0.8
 tonemap_mode = 3
 ssao_intensity = 1.0
 ssao_detail = 0.0

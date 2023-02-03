@@ -11,4 +11,4 @@ func _ready():
 		newButton.icon = Preloader.agentIcons[i];
 
 func _on_play_pressed():
-	get_tree().change_scene("res://world.tscn");
+	get_tree().change_scene_to_file("res://world.tscn");

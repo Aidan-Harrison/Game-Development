@@ -3,56 +3,56 @@
 [ext_resource type="Material" uid="uid://llxew2w8eohy" path="res://Materials/AgentSpecific/Sage/SageWall.tres" id="1_72gy1"]
 [ext_resource type="Script" path="res://Agents/Sage/Sage_Orb.gd" id="1_renbi"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8oers"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_imfuc"]
 bounce = 0.5
 
-[sub_resource type="SphereMesh" id="SphereMesh_xgn4s"]
+[sub_resource type="SphereMesh" id="SphereMesh_jfywa"]
 material = ExtResource("1_72gy1")
 radius = 0.25
 height = 0.5
 radial_segments = 8
 rings = 8
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_nnb8m"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_b1a4r"]
 size = Vector3(0.5, 0.5, 0.5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_okahf"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_mmk64"]
 size = Vector3(0.55, 0.55, 0.55)
 
-[sub_resource type="Curve" id="Curve_05n1w"]
+[sub_resource type="Curve" id="Curve_4of2y"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_18kjm"]
-curve = SubResource("Curve_05n1w")
+[sub_resource type="CurveTexture" id="CurveTexture_3cnb3"]
+curve = SubResource("Curve_4of2y")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ex5ou"]
-scale_curve = SubResource("CurveTexture_18kjm")
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_chx41"]
+scale_curve = SubResource("CurveTexture_3cnb3")
 hue_variation_max = 0.58
 turbulence_noise_strength = 16.79
 turbulence_noise_scale = 1.0
 turbulence_noise_speed = Vector3(2, 0, 2)
 
-[sub_resource type="BoxMesh" id="BoxMesh_cu4hc"]
+[sub_resource type="BoxMesh" id="BoxMesh_103mw"]
 material = ExtResource("1_72gy1")
 size = Vector3(0.2, 0.2, 0.2)
 
 [node name="Sage_Orb" type="RigidBody3D"]
 mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_8oers")
+physics_material_override = SubResource("PhysicsMaterial_imfuc")
 gravity_scale = 0.5
 script = ExtResource("1_renbi")
 
 [node name="MeshInstance3d" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_xgn4s")
+mesh = SubResource("SphereMesh_jfywa")
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_nnb8m")
+shape = SubResource("BoxShape3D_b1a4r")
 
 [node name="Area3d" type="Area3D" parent="."]
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="Area3d"]
-shape = SubResource("BoxShape3D_okahf")
+shape = SubResource("BoxShape3D_mmk64")
 
 [node name="OmniLight3d" type="OmniLight3D" parent="."]
 light_color = Color(0, 1, 0.47451, 1)
@@ -60,9 +60,8 @@ light_color = Color(0, 1, 0.47451, 1)
 [node name="GpuParticles3d" type="GPUParticles3D" parent="."]
 amount = 64
 lifetime = 2.0
-trail_length_secs = 1.0
-process_material = SubResource("ParticleProcessMaterial_ex5ou")
-draw_pass_1 = SubResource("BoxMesh_cu4hc")
+process_material = SubResource("ParticleProcessMaterial_chx41")
+draw_pass_1 = SubResource("BoxMesh_103mw")
 
 [connection signal="body_entered" from="Area3d" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3d" to="." method="_on_area_3d_body_exited"]

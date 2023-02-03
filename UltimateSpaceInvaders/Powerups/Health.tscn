@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Powerups/Health.gd" id="1_tyo1i"]
 [ext_resource type="Texture2D" uid="uid://b5g5wfqdjkf37" path="res://Assets/Textures/HealthPickup.png" id="2_p07xe"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5tx8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_135ip"]
 size = Vector2(50, 48)
 
 [node name="Health" type="Node2D"]
@@ -20,4 +20,4 @@ monitoring = false
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="Area2d"]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_h5tx8")
+shape = SubResource("RectangleShape2D_135ip")

@@ -16,4 +16,5 @@ extends Control
 func _ready():
 	gOver.visible = false;
 	shield.value = 0;
+	shield.visible = false;
 	bossBar.visible = false;

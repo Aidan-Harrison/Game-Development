@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ds4fob85uvsk4" path="res://icon.svg" id="1_7htlo"]
 [ext_resource type="Script" path="res://Gameplay/Boss.gd" id="1_e7eid"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcqmt"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dherl"]
 size = Vector2(129, 128)
 
 [node name="Boss" type="CharacterBody2D"]
@@ -15,7 +15,7 @@ texture = ExtResource("1_7htlo")
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_kcqmt")
+shape = SubResource("RectangleShape2D_dherl")
 
 [node name="AttackTimer" type="Timer" parent="."]
 autostart = true

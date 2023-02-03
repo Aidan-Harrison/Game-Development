@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://cydqpubljwg0t" path="res://Materials/BaseWeapon.tres" id="2_vktuj"]
 [ext_resource type="AudioStream" uid="uid://dij6fd6kbptc1" path="res://Audio/Weapons/Valorant_Vandal_Shot.wav" id="3_0il0t"]
 
-[sub_resource type="Animation" id="Animation_snsft"]
+[sub_resource type="Animation" id="Animation_b6x0f"]
 resource_name = "Fire"
 length = 0.15
 step = 0.025
@@ -34,7 +34,7 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 0, -0.261799), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_c7102"]
+[sub_resource type="Animation" id="Animation_lfvms"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -61,10 +61,10 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wwn1x"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2b15a"]
 _data = {
-"Fire": SubResource("Animation_snsft"),
-"RESET": SubResource("Animation_c7102")
+"Fire": SubResource("Animation_b6x0f"),
+"RESET": SubResource("Animation_lfvms")
 }
 
 [node name="Vandal" type="Node3D"]
@@ -82,7 +82,7 @@ surface_material_override/0 = ExtResource("2_vktuj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_wwn1x")
+"": SubResource("AnimationLibrary_2b15a")
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

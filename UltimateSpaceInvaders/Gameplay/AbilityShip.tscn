@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Gameplay/AbilityShip.gd" id="1_r47jy"]
 [ext_resource type="Texture2D" uid="uid://ds4fob85uvsk4" path="res://icon.svg" id="2_p0dq1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ce584"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nu5y3"]
 size = Vector2(52, 52)
 
 [node name="AbilityShip" type="CharacterBody2D"]
@@ -18,4 +18,4 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_p0dq1")
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ce584")
+shape = SubResource("RectangleShape2D_nu5y3")

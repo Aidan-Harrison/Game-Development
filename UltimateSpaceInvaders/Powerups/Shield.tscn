@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Powerups/Shield.gd" id="1_7gpry"]
 [ext_resource type="Texture2D" uid="uid://dhp1hwmyyugas" path="res://Assets/Textures/ShieldPickup.png" id="2_7ekks"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5tx8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpsvn"]
 size = Vector2(50, 48)
 
 [node name="Shield" type="Node2D"]
@@ -20,4 +20,4 @@ monitoring = false
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="Area2d"]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_h5tx8")
+shape = SubResource("RectangleShape2D_bpsvn")
