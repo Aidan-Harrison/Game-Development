@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://tp1cgotnp131"]
+
+[ext_resource type="Script" path="res://Tree/Node.gd" id="1_y6wnl"]
+[ext_resource type="Texture2D" uid="uid://xwu7y6owlnax" path="res://icon.svg" id="2_i0peh"]
+
+[node name="Node" type="Node2D"]
+script = ExtResource("1_y6wnl")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -17.5
+offset_right = 17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("2_i0peh")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
