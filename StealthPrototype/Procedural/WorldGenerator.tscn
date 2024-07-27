@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://chh51v626ses1"]
+
+[ext_resource type="Script" path="res://Procedural/WorldGenerator.gd" id="1_44r60"]
+
+[node name="WorldGenerator" type="Node3D"]
+script = ExtResource("1_44r60")

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://7diimpk0bgtb"]
+
+[ext_resource type="Script" path="res://Prefabs/Gameplay/Camera.gd" id="1_f36o4"]
+[ext_resource type="Material" uid="uid://chmpc3n1b31y8" path="res://Materials/CameraConeEffect.tres" id="2_pjv26"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5u2qh"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_48mnl"]
+size = Vector3(0.2, 0.2, 0.5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hwjsf"]
+top_radius = 0.0
+bottom_radius = 2.0
+height = 6.0
+radial_segments = 24
+rings = 1
+cap_top = false
+
+[node name="Camera" type="Node3D"]
+script = ExtResource("1_f36o4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_5u2qh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.195644, 0)
+mesh = SubResource("BoxMesh_48mnl")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.2, 3.11552)
+material_override = ExtResource("2_pjv26")
+mesh = SubResource("CylinderMesh_hwjsf")

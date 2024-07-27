@@ -1,0 +1,78 @@
+[gd_scene load_steps=14 format=3 uid="uid://b4k6m788j6g1o"]
+
+[ext_resource type="PackedScene" uid="uid://ciw7sytthih3d" path="res://Player/Player.tscn" id="1_e6xpf"]
+[ext_resource type="PackedScene" uid="uid://dll4lcydjk1ub" path="res://AI/Base_AI.tscn" id="2_w2qn0"]
+[ext_resource type="PackedScene" uid="uid://yd5uppmyk7cr" path="res://Weapons/Pistol.tscn" id="3_gx61p"]
+[ext_resource type="PackedScene" uid="uid://lrpl57jfephg" path="res://Prefabs/Gameplay/LaserLine.tscn" id="4_8veca"]
+[ext_resource type="PackedScene" uid="uid://cjg8vghlhd870" path="res://Prefabs/Gameplay/Door.tscn" id="5_nuud0"]
+[ext_resource type="PackedScene" uid="uid://7diimpk0bgtb" path="res://Prefabs/Gameplay/Camera.tscn" id="6_n8vnb"]
+[ext_resource type="PackedScene" uid="uid://dnhk8vayyq2ei" path="res://Weapons/AssualtRifle.tscn" id="7_ff4ip"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_ptc3c"]
+vertices = PackedVector3Array(-18.5, 0.5, -24.5, -24.5, 0.5, -24.5, -24.5, 0.5, -18.5, -24.5, 0.5, 18.25, -24.5, 0.5, 24.5, -18.5, 0.5, 24.5, 24.5, 0.5, -18.5, 24.5, 0.5, -24.5, 18.25, 0.5, -24.5, 18.25, 0.5, 24.5, 24.5, 0.5, 24.5, 24.5, 0.5, 18.25, -24.5, 0.5, 12.25, -24.5, 0.5, 18.25, -18.5, 0.5, 24.5, -12.25, 0.5, 24.5, 24.5, 0.5, -18.5, 18.25, 0.5, -24.5, 12.25, 0.5, -24.5, 24.5, 0.5, -12.25, -12.25, 0.5, -24.5, -18.5, 0.5, -24.5, -24.5, 0.5, -18.5, -24.5, 0.5, -12.25, 12.25, 0.5, 24.5, 18.25, 0.5, 24.5, 24.5, 0.5, 18.25, 6, 0.5, 24.5, 24.5, 0.5, 12.25, 24.5, 0.5, 6, 0, 0.5, 24.5, 12.25, 0.5, 24.5, 24.5, 0.5, 18.25, 24.5, 0.5, 12.25, 6, 0.5, 24.5, 0, 0.5, -24.5, -6.25, 0.5, -24.5, -24.5, 0.5, -6.25, -24.5, 0.5, 0, 24.5, 0.5, 0, 0, 0.5, -24.5, -24.5, 0.5, 0, -6.25, 0.5, 24.5, 0, 0.5, 24.5, 24.5, 0.5, 6, -24.5, 0.5, 12.25, -12.25, 0.5, 24.5, -6.25, 0.5, 24.5, -24.5, 0.5, 6, 24.5, 0.5, -6.25, 24.5, 0.5, -12.25, 12.25, 0.5, -24.5, 6, 0.5, -24.5, -6.25, 0.5, -24.5, -12.25, 0.5, -24.5, -24.5, 0.5, -12.25, -24.5, 0.5, -6.25, -24.5, 0.5, 0, -24.5, 0.5, 6, -6.25, 0.5, 24.5, 24.5, 0.5, -6.25, 6, 0.5, -24.5, 0, 0.5, -24.5, 24.5, 0.5, 0)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(8, 7, 6), PackedInt32Array(11, 10, 9), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 20, 23), PackedInt32Array(26, 25, 24), PackedInt32Array(28, 27, 29), PackedInt32Array(29, 27, 30), PackedInt32Array(32, 31, 33), PackedInt32Array(33, 31, 34), PackedInt32Array(36, 35, 37), PackedInt32Array(37, 35, 38), PackedInt32Array(44, 43, 39), PackedInt32Array(39, 43, 42), PackedInt32Array(39, 42, 41), PackedInt32Array(39, 41, 40), PackedInt32Array(46, 45, 47), PackedInt32Array(47, 45, 48), PackedInt32Array(50, 49, 51), PackedInt32Array(51, 49, 52), PackedInt32Array(54, 53, 55), PackedInt32Array(55, 53, 56), PackedInt32Array(59, 58, 57), PackedInt32Array(61, 60, 62), PackedInt32Array(62, 60, 63)]
+agent_height = 2.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m6aef"]
+size = Vector2(50, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d1gdx"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1btre"]
+
+[sub_resource type="Sky" id="Sky_wicgj"]
+sky_material = SubResource("ProceduralSkyMaterial_1btre")
+
+[sub_resource type="Environment" id="Environment_k7orm"]
+background_mode = 2
+sky = SubResource("Sky_wicgj")
+tonemap_mode = 2
+fog_enabled = true
+fog_height = 1.0
+fog_height_density = 0.1
+
+[node name="World" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_e6xpf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 14)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.677077, -0.298809, 0.672517, -0.12941, 0.851271, 0.508519, -0.724444, -0.431336, 0.537707, 0, 3.6422, 0)
+shadow_enabled = true
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_ptc3c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
+mesh = SubResource("PlaneMesh_m6aef")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_d1gdx")
+
+[node name="Base_AI" parent="." instance=ExtResource("2_w2qn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 6)
+
+[node name="Base_AI2" parent="." instance=ExtResource("2_w2qn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 6)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k7orm")
+
+[node name="Pistol" parent="." instance=ExtResource("3_gx61p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 0)
+
+[node name="LaserLine" parent="." instance=ExtResource("4_8veca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33188, 0.691221, -6.29899)
+
+[node name="Door" parent="." instance=ExtResource("5_nuud0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
+
+[node name="Camera" parent="." instance=ExtResource("6_n8vnb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 0)
+
+[node name="AssualtRifle" parent="." instance=ExtResource("7_ff4ip")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 0)

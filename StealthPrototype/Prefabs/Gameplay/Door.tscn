@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjg8vghlhd870"]
+
+[ext_resource type="Script" path="res://Prefabs/Gameplay/Door.gd" id="1_ww8f7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bdqfw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dwvke"]
+size = Vector3(1, 2, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f34v0"]
+size = Vector3(0.2, 0.1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n1xmk"]
+size = Vector3(0.2, 0.1, 0.1)
+
+[node name="Door" type="StaticBody3D" groups=["Damageable"]]
+script = ExtResource("1_ww8f7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = SubResource("BoxMesh_bdqfw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_dwvke")
+
+[node name="Handle" type="StaticBody3D" parent="." groups=["Activateable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.342, 0, 0.0926402)
+
+[node name="HandleMesh" type="MeshInstance3D" parent="Handle"]
+mesh = SubResource("BoxMesh_f34v0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Handle"]
+shape = SubResource("BoxShape3D_n1xmk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

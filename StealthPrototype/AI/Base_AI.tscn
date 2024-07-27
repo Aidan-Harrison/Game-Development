@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://dll4lcydjk1ub"]
+
+[ext_resource type="Script" path="res://AI/Base_AI.gd" id="1_s615e"]
+[ext_resource type="ArrayMesh" uid="uid://bfrsy2ine64yq" path="res://Assets/Meshes/AI_TestMesh.obj" id="2_7pm7x"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bmk8h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cs57s"]
+size = Vector3(1, 1.78558, 1.4298)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m870y"]
+radius = 0.219166
+
+[node name="Base_AI" type="CharacterBody3D" groups=["Damageable", "Enemy"]]
+script = ExtResource("1_s615e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = ExtResource("2_7pm7x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_bmk8h")
+
+[node name="MainWeaponHolster" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.418337, -0.515039)
+
+[node name="SubWeaponHolster" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.11877)
+shape = SubResource("BoxShape3D_cs57s")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="CritSpot" type="CollisionShape3D" parent="." groups=["CritSpot"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.0905983)
+shape = SubResource("SphereShape3D_m870y")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bnwtscimct12"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5r2kw"]
+bg_color = Color(0.341176, 0.341176, 0.341176, 0.686275)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sq5v"]
+bg_color = Color(1, 1, 1, 1)
+corner_detail = 1
+
+[resource]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_5r2kw")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_8sq5v")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciw7sytthih3d"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_vxxl0"]
+[ext_resource type="PackedScene" uid="uid://cspu2qohnc0p7" path="res://UI/HUD/HUD.tscn" id="2_777do"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lsr85"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dmkfo"]
+
+[node name="Player" type="CharacterBody3D" groups=["Damageable", "Player"]]
+script = ExtResource("1_vxxl0")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000294447, 0.75, 0.00410843)
+fov = 95.0
+
+[node name="InteractRay" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -2)
+
+[node name="WeaponLocation" type="Node3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.322, -0.338, -0.5)
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_lsr85")
+
+[node name="HUD" parent="." instance=ExtResource("2_777do")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_dmkfo")
+
+[node name="SubWeaponHolster" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+
+[node name="MainWeaponHolster" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602, 0.5)

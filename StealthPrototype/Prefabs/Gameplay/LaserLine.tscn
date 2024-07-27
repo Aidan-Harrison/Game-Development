@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://lrpl57jfephg"]
+
+[ext_resource type="Script" path="res://Prefabs/Gameplay/LaserLine.gd" id="1_f2pdk"]
+
+[node name="LaserLine" type="Node3D"]
+script = ExtResource("1_f2pdk")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(10, 0, 0)
