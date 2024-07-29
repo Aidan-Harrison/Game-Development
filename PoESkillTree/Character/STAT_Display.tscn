@@ -27,14 +27,62 @@ anchor_right = 1.0
 anchor_bottom = 0.998
 offset_bottom = -0.100006
 
-[node name="VALUE_Health" type="Label" parent="ColorRect/VBoxContainer"]
+[node name="SKILLPOINTS" type="Label" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
-text = "000"
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="VALUE_Mana" type="Label" parent="ColorRect/VBoxContainer"]
+[node name="HealthContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
-text = "000"
 
-[node name="VALUE_Speed" type="Label" parent="ColorRect/VBoxContainer"]
+[node name="HEALTH" type="Label" parent="ColorRect/VBoxContainer/HealthContainer"]
+layout_mode = 2
+text = "HEALTH:"
+
+[node name="VALUE_Health" type="Label" parent="ColorRect/VBoxContainer/HealthContainer"]
 layout_mode = 2
 text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ManaContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="MANA" type="Label" parent="ColorRect/VBoxContainer/ManaContainer"]
+layout_mode = 2
+text = "MANA:"
+
+[node name="VALUE_Mana" type="Label" parent="ColorRect/VBoxContainer/ManaContainer"]
+layout_mode = 2
+text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpeedContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="SPEED" type="Label" parent="ColorRect/VBoxContainer/SpeedContainer"]
+layout_mode = 2
+text = "SPEED:"
+
+[node name="VALUE_Speed" type="Label" parent="ColorRect/VBoxContainer/SpeedContainer"]
+layout_mode = 2
+text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Show_Hide" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.647
+anchor_right = 0.262
+anchor_bottom = 0.694
+offset_top = -0.256012
+offset_right = 0.175964
+offset_bottom = 0.287994
+grow_horizontal = 2
+grow_vertical = 0
+text = "^"
+
+[connection signal="pressed" from="Show_Hide" to="." method="_on_show_hide_pressed"]

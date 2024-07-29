@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Tree/Node.gd" id="1_y6wnl"]
 [ext_resource type="Texture2D" uid="uid://xwu7y6owlnax" path="res://icon.svg" id="2_i0peh"]
 
-[node name="Node" type="Node2D"]
+[node name="Node" type="Node2D" groups=["Node"]]
 script = ExtResource("1_y6wnl")
 
 [node name="Button" type="Button" parent="."]

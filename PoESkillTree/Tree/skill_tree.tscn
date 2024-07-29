@@ -7,20 +7,100 @@
 [node name="SkillTree" type="Node2D"]
 script = ExtResource("1_gxpgi")
 
-[node name="StatDisplay" parent="." instance=ExtResource("3_ud7b3")]
+[node name="Background" type="ColorRect" parent="."]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -583.0
+offset_top = -332.0
+offset_right = 581.0
+offset_bottom = 328.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.121569, 0.121569, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StatDisplay" parent="Camera2D" instance=ExtResource("3_ud7b3")]
 offset_left = -576.0
 offset_top = -324.0
 offset_right = 576.0
 offset_bottom = 323.0
 
 [node name="Node" parent="." instance=ExtResource("2_wfb0f")]
+TYPE = 0
+CORE_TYPE = 0
+STAT_TYPE = 0
+IsSingle = true
 
-[node name="Node2" parent="." instance=ExtResource("2_wfb0f")]
+[node name="Node8" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
+position = Vector2(0, -94)
+TYPE = 0
+CORE_TYPE = 0
+STAT_TYPE = 0
+PreviousNode = NodePath("../Node")
+
+[node name="Node9" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
+position = Vector2(-1, -204)
+TYPE = 0
+CORE_TYPE = 0
+STAT_TYPE = 0
+PreviousNode = NodePath("../Node8")
+
+[node name="Node2" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
 position = Vector2(97, 0)
-STAT_TYPE_ID = 1
+TYPE = 0
+CORE_TYPE = 0
+STAT_TYPE = 1
+PreviousNode = NodePath("../Node")
 
-[node name="Node3" parent="." instance=ExtResource("2_wfb0f")]
-position = Vector2(52, 55)
-STAT_TYPE_ID = 2
+[node name="Node4" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
+position = Vector2(147, 84)
+TYPE = 1
+CORE_TYPE = 0
+STAT_TYPE = 1
+ValueToGive = 30.0
+PreviousNode = NodePath("../Node2")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Node3" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
+position = Vector2(0, 102)
+TYPE = 0
+CORE_TYPE = 0
+STAT_TYPE = 2
+PreviousNode = NodePath("../Node")
+
+[node name="Node10" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
+position = Vector2(0, 204)
+TYPE = 0
+CORE_TYPE = 0
+STAT_TYPE = 2
+PreviousNode = NodePath("../Node3")
+
+[node name="Node11" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
+position = Vector2(0, 301)
+TYPE = 0
+CORE_TYPE = 0
+STAT_TYPE = 2
+PreviousNode = NodePath("../Node10")
+
+[node name="Node5" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
+position = Vector2(148, -90)
+TYPE = 0
+CORE_TYPE = 0
+STAT_TYPE = 1
+PreviousNode = NodePath("../Node2")
+
+[node name="Node6" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
+position = Vector2(313, -91)
+TYPE = 0
+CORE_TYPE = 0
+STAT_TYPE = 1
+PreviousNode = NodePath("../Node5")
+
+[node name="Node7" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
+position = Vector2(409, -195)
+TYPE = 0
+CORE_TYPE = 0
+STAT_TYPE = 1
+PreviousNode = NodePath("../Node6")
