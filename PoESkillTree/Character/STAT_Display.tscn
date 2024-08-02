@@ -20,55 +20,93 @@ offset_right = 0.175964
 offset_bottom = 0.287994
 color = Color(0, 0, 0, 0.501961)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="NAME" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.078
+offset_right = 3.05176e-05
+offset_bottom = -0.100002
+text = "PLAYER NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoreStats" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.998
+offset_top = 40.0
+offset_right = 3.05176e-05
 offset_bottom = -0.100006
 
-[node name="SKILLPOINTS" type="Label" parent="ColorRect/VBoxContainer"]
+[node name="SKILLPOINTS" type="Label" parent="ColorRect/CoreStats"]
 layout_mode = 2
 text = "99"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HealthContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+[node name="HealthContainer" type="HBoxContainer" parent="ColorRect/CoreStats"]
 layout_mode = 2
 
-[node name="HEALTH" type="Label" parent="ColorRect/VBoxContainer/HealthContainer"]
+[node name="HEALTH" type="Label" parent="ColorRect/CoreStats/HealthContainer"]
 layout_mode = 2
 text = "HEALTH:"
 
-[node name="VALUE_Health" type="Label" parent="ColorRect/VBoxContainer/HealthContainer"]
+[node name="VALUE_Health" type="Label" parent="ColorRect/CoreStats/HealthContainer"]
 layout_mode = 2
 text = "000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ManaContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+[node name="ManaContainer" type="HBoxContainer" parent="ColorRect/CoreStats"]
 layout_mode = 2
 
-[node name="MANA" type="Label" parent="ColorRect/VBoxContainer/ManaContainer"]
+[node name="MANA" type="Label" parent="ColorRect/CoreStats/ManaContainer"]
 layout_mode = 2
 text = "MANA:"
 
-[node name="VALUE_Mana" type="Label" parent="ColorRect/VBoxContainer/ManaContainer"]
+[node name="VALUE_Mana" type="Label" parent="ColorRect/CoreStats/ManaContainer"]
 layout_mode = 2
 text = "000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SpeedContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+[node name="SpeedContainer" type="HBoxContainer" parent="ColorRect/CoreStats"]
 layout_mode = 2
 
-[node name="SPEED" type="Label" parent="ColorRect/VBoxContainer/SpeedContainer"]
+[node name="SPEED" type="Label" parent="ColorRect/CoreStats/SpeedContainer"]
 layout_mode = 2
 text = "SPEED:"
 
-[node name="VALUE_Speed" type="Label" parent="ColorRect/VBoxContainer/SpeedContainer"]
+[node name="VALUE_Speed" type="Label" parent="ColorRect/CoreStats/SpeedContainer"]
 layout_mode = 2
 text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="REISTANCES" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.616
+anchor_right = 1.0
+anchor_bottom = 0.693
+offset_top = -0.200012
+offset_right = 3.05176e-05
+offset_bottom = 0.149994
+text = "RESISTANCES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DEFENCES" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.322
+anchor_right = 1.0
+anchor_bottom = 0.4
+offset_top = 0.0999908
+offset_right = 3.05176e-05
+text = "DEFENCES"
 horizontal_alignment = 1
 vertical_alignment = 1
 

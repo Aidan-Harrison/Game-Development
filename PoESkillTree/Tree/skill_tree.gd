@@ -2,6 +2,7 @@ extends Node2D;
 
 @onready var Cam : Camera2D = $Camera2D;
 @onready var CharacterRef : PackedScene = preload("res://Character/Character.tscn");
+@onready var Tooltip : PackedScene = preload("res://Tooltip.tscn");
 @onready var CharacterDisplay : Control = $Camera2D/StatDisplay;
 @onready var Background : ColorRect = $Background;
 
@@ -11,6 +12,10 @@ var IsPanningCamera : bool = false;
 var Mouse : Vector2 = Vector2.ZERO;
 
 func _ready() -> void:
+	# Create tooltip
+	var CurrentTooltip : Node2D = Tooltip.instantiate();
+	add_child(CurrentTooltip); 
+	FunctionSet.CurrentTooltip = CurrentTooltip;
 	# Go through nodes and build tree
 	for node in get_children():
 		if(node.is_in_group("Node") && node.PreviousNode != null):
@@ -19,8 +24,9 @@ func _ready() -> void:
 			NewLine.add_point(node.PreviousNode.position);
 			NewLine.add_point(node.position);
 			NewLine.width = 5.0;
-			NewLine.default_color = Color.BISQUE;
+			NewLine.default_color = Color.GRAY;
 			NewLine.z_index = -1;
+			node.Line = NewLine;
 	
 	CurrentCharacter = CharacterRef.instantiate();
 	add_child(CurrentCharacter);

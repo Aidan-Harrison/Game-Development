@@ -12,15 +12,17 @@ z_index = -2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -583.0
-offset_top = -332.0
-offset_right = 581.0
-offset_bottom = 328.0
+offset_left = -3377.0
+offset_top = -2103.0
+offset_right = 3374.0
+offset_bottom = 2277.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.121569, 0.121569, 0.121569, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
 
 [node name="StatDisplay" parent="Camera2D" instance=ExtResource("3_ud7b3")]
 offset_left = -576.0
@@ -48,6 +50,14 @@ CORE_TYPE = 0
 STAT_TYPE = 0
 PreviousNode = NodePath("../Node8")
 
+[node name="Node12" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
+position = Vector2(-130, -204)
+TYPE = 1
+CORE_TYPE = 0
+STAT_TYPE = 0
+ValueToGive = 30.0
+PreviousNode = NodePath("../Node9")
+
 [node name="Node2" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
 position = Vector2(97, 0)
 TYPE = 0
@@ -57,11 +67,46 @@ PreviousNode = NodePath("../Node")
 
 [node name="Node4" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
 position = Vector2(147, 84)
-TYPE = 1
+TYPE = 0
 CORE_TYPE = 0
-STAT_TYPE = 1
-ValueToGive = 30.0
+STAT_TYPE = 0
 PreviousNode = NodePath("../Node2")
+
+[node name="Node14" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
+position = Vector2(252, 80)
+TYPE = 0
+CORE_TYPE = 0
+STAT_TYPE = 0
+PreviousNode = NodePath("../Node4")
+
+[node name="Node15" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
+position = Vector2(315, 141)
+TYPE = 0
+CORE_TYPE = 0
+STAT_TYPE = 0
+PreviousNode = NodePath("../Node14")
+
+[node name="Node16" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
+position = Vector2(300, 232)
+TYPE = 2
+CORE_TYPE = 0
+STAT_TYPE = 0
+PreviousNode = NodePath("../Node15")
+Description = "Double your strength, halve your Dexterity and Intelligence"
+
+[node name="Node17" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
+position = Vector2(196, 232)
+TYPE = 0
+CORE_TYPE = 0
+STAT_TYPE = 0
+PreviousNode = NodePath("../Node16")
+
+[node name="Node18" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
+position = Vector2(156, 158)
+TYPE = 0
+CORE_TYPE = 0
+STAT_TYPE = 0
+PreviousNode = NodePath("../Node17")
 
 [node name="Node3" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
 position = Vector2(0, 102)
@@ -84,6 +129,14 @@ CORE_TYPE = 0
 STAT_TYPE = 2
 PreviousNode = NodePath("../Node10")
 
+[node name="Node13" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
+position = Vector2(-131, 300)
+TYPE = 1
+CORE_TYPE = 0
+STAT_TYPE = 2
+ValueToGive = 30.0
+PreviousNode = NodePath("../Node11")
+
 [node name="Node5" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
 position = Vector2(148, -90)
 TYPE = 0
@@ -100,7 +153,8 @@ PreviousNode = NodePath("../Node5")
 
 [node name="Node7" parent="." node_paths=PackedStringArray("PreviousNode") instance=ExtResource("2_wfb0f")]
 position = Vector2(409, -195)
-TYPE = 0
+TYPE = 1
 CORE_TYPE = 0
 STAT_TYPE = 1
+ValueToGive = 30.0
 PreviousNode = NodePath("../Node6")

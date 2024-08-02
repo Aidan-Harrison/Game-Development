@@ -2,6 +2,7 @@ extends Node;
 
 var ActiveCharacter = null;
 var CharacterDisplay = null;
+var CurrentTooltip = null;
 
 enum ADJUST_ID{HEALTH, MANA, SPEED};
 
